@@ -1,4 +1,4 @@
-# import required packages
+# import packages
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
@@ -34,7 +34,7 @@ dag = DAG(dag_id='dd_test_v1',
           default_args=default_args,
           schedule_interval=timedelta(minutes=5))
 
-# t1, t2 and t3 are examples of tasks created by instantiating operators
+# t1, t2, t3, and t5 are examples of tasks created by instantiating operators
 t1 = BashOperator(
     task_id='Date',
     bash_command='date',
